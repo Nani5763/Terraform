@@ -1,7 +1,7 @@
 resource "aws_instance" "Pavan" {
-    ami = "ami-07caf09b362be10b8"
-    instance_type = "t2.micro"
-    key_name = "first-key"
+    ami = var.ami_id_Public
+    instance_type = var.instance_type_01
+    key_name = var.key_name_01
     subnet_id = aws_subnet.public_Pavan.id
     associate_public_ip_address = true #Enable auto-assigning public IP
     tags = {
@@ -10,9 +10,9 @@ resource "aws_instance" "Pavan" {
   
 }
 resource "aws_instance" "Private_Pavan" {
-    ami = "ami-07caf09b362be10b8"
-    instance_type = "t2.micro"
-    key_name = "first-key"
+    ami = var.ami_id_Private
+    instance_type = var.instance_type_02
+    key_name = var.key_name_02
     subnet_id = aws_subnet.Private_Pavan.id
     associate_public_ip_address = false #Disable auto-assigning Public IP
     tags = {
