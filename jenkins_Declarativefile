@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Nani5763/Terraform.git'
+            }
+        }
+        
+        stage('init') {
+            steps {
+                dir ('Day-01-Basic-code-Ec2')
+                sh 'terraform init'
+            }
+        }
+        stage('plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('action') {
+            steps {
+                sh 'terraform ${action} -auto-approve'
+            }
+        }
+    }
+}
