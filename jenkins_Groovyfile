@@ -1,0 +1,17 @@
+node {
+    stage('git checkout') { 
+        git branch: 'main', url: 'https://github.com/Nani5763/Terraform.git'
+    }
+    stage('init') {
+        dir('Day-01-Basic-code-Ec2'){
+            sh 'terraform init'
+        }
+    }
+    stage('plan'){
+        sh 'terraform plan'
+    }
+    stage('apply') {
+        sh 'terraform apply -auto-approve'
+        
+    }
+}
