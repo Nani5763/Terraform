@@ -14,8 +14,8 @@ node {
         
     }
     stage('apply') {
-        dir('Day-01-Basic-code-Ec2')
+        dir('Day-01-Basic-code-Ec2'){
         sh 'terraform apply -auto-approve'
-        
+        }
     }
 }
