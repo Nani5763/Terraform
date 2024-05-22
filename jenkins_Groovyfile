@@ -8,9 +8,13 @@ node {
         }
     }
     stage('plan'){
-        sh 'terraform plan'
+        dir('Day-01-Basic-code-Ec2'){
+            sh 'terraform plan'
+        }
+        
     }
     stage('apply') {
+        dir('Day-01-Basic-code-Ec2')
         sh 'terraform apply -auto-approve'
         
     }
