@@ -61,13 +61,27 @@ resource "aws_security_group" "rds_sg" {
   
 }
 
-resource "aws_db_instance" "rds_replica" {
+resource "aws_db_instance" "rds_replica-1" {
     count = 1
     replicate_source_db = aws_db_instance.rds.identifier
-    identifier = "db-instance-replica-${count.index}"
+    identifier = "db-instance-replica-1-${count.index}"
     instance_class = "db.t3.micro"
     skip_final_snapshot = true
     availability_zone = "us-east-2a"
+    vpc_security_group_ids = [ aws_security_group.rds_sg.id ]
+    #db_subnet_group_name    = aws_db_subnet_group.rds_subnet_group.name
+    backup_retention_period = 7
+
+  
+}
+
+resource "aws_db_instance" "rds_replica-2" {
+    count = 1
+    replicate_source_db = aws_db_instance.rds.identifier
+    identifier = "db-instance-replica-2-${count.index}"
+    instance_class = "db.t3.micro"
+    skip_final_snapshot = true
+    availability_zone = "us-east-2b"
     vpc_security_group_ids = [ aws_security_group.rds_sg.id ]
     #db_subnet_group_name    = aws_db_subnet_group.rds_subnet_group.name
     backup_retention_period = 7
