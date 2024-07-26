@@ -1,7 +1,7 @@
 resource "aws_instance" "dev" {
-    ami = "ami-0cc9838aa7ab1dce7"
+    ami = "ami-068e0f1a600cd311c"
     instance_type = "t2.micro"
-    key_name = "Second-key"
+    key_name = "Ansible"
     #security_groups = [ "aws_security_group.dev.id" ]
     tags = {
       Name = "Instanced-01"
