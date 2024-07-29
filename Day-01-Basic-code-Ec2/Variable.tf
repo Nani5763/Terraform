@@ -1,6 +1,6 @@
 variable "ami_id" {
     type = string
-    default = "ami-07caf09b362be10b8"
+    default = "ami-0427090fd1714168b"
   
 }
 variable "instance_type" {
@@ -10,6 +10,6 @@ variable "instance_type" {
 }
 variable "key_name" {
     type = string
-    default = "first-key"
+    default = "Kubernetes"
   
 }
