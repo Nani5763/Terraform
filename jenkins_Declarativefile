@@ -10,8 +10,9 @@ pipeline {
         
         stage('init') {
             steps {
-                dir ('Day-01-Basic-code-Ec2')
+                dir ('Day-01-Basic-code-Ec2'){
                 sh 'terraform init'
+                }
             }
         }
         stage('plan') {
