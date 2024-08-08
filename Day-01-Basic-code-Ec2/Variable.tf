@@ -1,6 +1,6 @@
 variable "ami_id" {
     type = string
-    default = "ami-0427090fd1714168b"
+    default = "ami-0ae8f15ae66fe8cda"
   
 }
 variable "instance_type" {
