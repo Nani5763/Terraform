@@ -10,14 +10,15 @@ sudo yum install git -y
 
 sudo dnf install java-11-amazon-corretto -y
                  or 
-sudo yum install java-17-amazon-corretto.x86_64 -y
+sudo dnf install java-17-amazon-corretto.x86_64 -y
 
 #------------jenkins install-------------
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-sudo yum install jenkins -y
+sudo dnf install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
+sudo systemctl status jenkins
 
 
 # ------------------install terraform ------------------
